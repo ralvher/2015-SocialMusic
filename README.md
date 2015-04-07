@@ -3,7 +3,7 @@
 
 ### Miembros
 
-oscar
+osca r
 
 #lololololo
 
