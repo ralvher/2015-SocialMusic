@@ -1,3 +1,16 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mybtn{
+	margin-bottom: 10%;
+	margin-top: 5%;
+	background-color: black;
+	border-color: grey;
+	color: white;
+	align: center;
+	weight: 100%;
+	hover{
+		background-color: black;
+	}	
+	focus{
+		background-color: black;
+	}
+}
+

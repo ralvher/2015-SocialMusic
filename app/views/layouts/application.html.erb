@@ -2,15 +2,18 @@
 <html>
 	<head>
 		<title><%= full_title(yield(:title)) %></title>
+		<%= favicon_link_tag 'icono.png' %>
 		<%= stylesheet_link_tag 'application', media: 'all',
 		                                       'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
 		<%= render 'layouts/shim' %>
 	</head>
-	<body>
-	    <%= render 'layouts/header' %>
-	    <div class="container">
+	<body  class="<%=yield(:title)%>" >
+	    
+	    <%= render 'layouts/header'%>
+	    
+	    <div class="container col-sm-12 col-lg-12 col-xs-12 col-md-12">
 
 	    	<% flash.each do |message_type, message| %>
 
@@ -19,10 +22,10 @@
 			<% end %>
 			<%= yield %>
 
-			<%= debug(params) if Rails.env.development? %>
-
-			<%= render 'layouts/footer' %>
+			
 	    </div>
+
+	    <%= render 'layouts/footer' %>
 	</body>
 </html>
 
