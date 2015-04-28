@@ -4,14 +4,26 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+
+    auth = request.env["omniauth.auth"]
+    if auth
+      puts "email ----> #{auth["info"]["email"]}"
+      user = User.find_by(email: auth["info"]["email"]) || nuevo=User.create_with_omniauth(auth)
       log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      if nuevo        
+        flash[:success] = "Bienvenido a SocialMusic!"
+      end
       redirect_to user
     else
-      flash.now[:danger] = 'Email inválido / Contraseña incorrecta'
-      render 'static_pages/home'
+      user = User.find_by(email: params[:session][:email].downcase)
+      if user && user.authenticate(params[:session][:password])
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_to user
+      else
+        flash.now[:danger] = 'Email inválido / Contraseña incorrecta'
+        render 'static_pages/home'
+      end
     end
   end
 

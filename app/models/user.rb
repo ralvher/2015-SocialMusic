@@ -37,4 +37,12 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+   def self.create_with_omniauth(auth)  
+    create! do |user|  
+      user.name = auth["info"]["first_name"]  
+      user.email = auth["info"]["email"]  
+      user.password = auth["uid"] 
+    end      
+  end  
 end
