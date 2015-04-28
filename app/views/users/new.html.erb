@@ -1,2 +1,22 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'SignUp') %>
+<div class="welcome center col-sm-4 col-sm-offset-2 col-lg-offset-2 col-lg-4 col-xs-12 col-md-12 col-md-offset-0 col-xs-offset-0">
+
+  <h1 class="reg">Registro</h1>
+  
+  <%= form_for(@user) do |f| %>
+
+    <%= render 'shared/error_messages' %>
+    <%= f.label :nombre %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+    <%= f.label :contraseña %>
+    <%= f.password_field :password, class: 'form-control' %>
+    <%= f.label :password_confirmation, "Confirmar Contraseña" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.submit "Crear Cuenta", class: "mybtn btn btn-default" %>
+
+  <% end %>
+
+</div>
+

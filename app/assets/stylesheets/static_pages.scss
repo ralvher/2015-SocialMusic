@@ -1,16 +1,22 @@
+.Home{
+  background: image-url("background2.jpg");
+  background-size: cover;
+}
+
 .mybtn{
 	margin-bottom: 10%;
-	margin-top: 5%;
 	background-color: black;
 	border-color: grey;
 	color: white;
-	align: center;
-	weight: 100%;
-	hover{
+	&:hover{
 		background-color: black;
+		color:green;
 	}	
-	focus{
+	&:focus{
 		background-color: black;
 	}
 }
 
+.logo{
+	max-width: 50%;
+}
