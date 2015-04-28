@@ -6,10 +6,10 @@
 	color: white;
 	align: center;
 	weight: 100%;
-	hover{
+	&:hover{
 		background-color: black;
 	}	
-	focus{
+	&:focus{
 		background-color: black;
 	}
 }
