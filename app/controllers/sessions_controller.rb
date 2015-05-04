@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       if nuevo        
         flash[:success] = "Bienvenido a SocialMusic!"
       end
-      redirect_to user
+      redirect_back_or user
     else
       user = User.find_by(email: params[:session][:email].downcase)
       if user && user.authenticate(params[:session][:password])
