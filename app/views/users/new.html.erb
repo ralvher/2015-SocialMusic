@@ -4,18 +4,8 @@
   <h1 class="reg">Registro</h1>
   
   <%= form_for(@user) do |f| %>
-
-    <%= render 'shared/error_messages' %>
-    <%= f.label :nombre %>
-    <%= f.text_field :name, class: 'form-control' %>
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>
-    <%= f.label :contraseña %>
-    <%= f.password_field :password, class: 'form-control' %>
-    <%= f.label :password_confirmation, "Confirmar Contraseña" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= render 'fields', f: f %>
     <%= f.submit "Crear Cuenta", class: "mybtn btn btn-default" %>
-
   <% end %>
 
 </div>
