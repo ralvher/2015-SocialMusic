@@ -16,6 +16,10 @@ gem 'bcrypt',               '3.1.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'flog'
+gem 'flay'
+gem 'roodi'
+
 group :development, :test do
 	gem 'sqlite3', '1.3.9'
 	gem 'byebug', '3.4.0'
