@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
 
     auth = request.env["omniauth.auth"]
     if auth
-      puts "email ----> #{auth["info"]["email"]}"
       user = User.find_by(email: auth["info"]["email"]) || nuevo=User.create_with_omniauth(auth)
       log_in user
       if nuevo        
