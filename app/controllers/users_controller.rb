@@ -19,9 +19,9 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Bienvenido a SocialMusic!"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Por favor revise su email para activar su cuenta! "
+      redirect_to root_url
     else
       render 'new'
     end

@@ -17,9 +17,16 @@ class SessionsController < ApplicationController
     else
       user = User.find_by(email: params[:session][:email].downcase)
       if user && user.authenticate(params[:session][:password])
-        log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        redirect_back_or user
+        if user.activated?
+          log_in user
+          params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+          redirect_back_or user
+        else
+          message  = "Cuenta no activada "
+          message += "Revise su email"
+          flash[:warning] = message
+          redirect_to root_url
+        end
       else
         flash.now[:danger] = 'Email inválido / Contraseña incorrecta'
         render 'static_pages/home'
