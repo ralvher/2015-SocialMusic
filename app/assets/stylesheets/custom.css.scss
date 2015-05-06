@@ -89,6 +89,7 @@ p {
   color: white;
   text-transform: uppercase;  
   font-weight: bold;
+  font-size: 200%;
   &:hover {
     color: white;
     text-decoration: none;
@@ -138,8 +139,7 @@ p {
 }
 
 #session_remember_me {
-  width: auto;
-  margin-left: 0;
+ 
 }
 
 /* Users index */
@@ -151,5 +151,17 @@ p {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.forgot{
+  color:lightgreen;
+
+  &:hover{
+    color:lightgreen;
+  }
+
+  &:focus{
+    color:lightgreen;
   }
 }
