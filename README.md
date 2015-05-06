@@ -3,7 +3,8 @@
 
 ### Miembros
 
-osca r
-
-#lololololo
+Raquel Álvarez Hernández
+Noel Padrón Díaz
+Héctor Rodriguez Báez
+Óscar Trujillo Acosta
 
