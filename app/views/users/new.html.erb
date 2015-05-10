@@ -4,7 +4,7 @@
   <h1 class="reg">Registro</h1>
   
   <%= form_for(@user) do |f| %>
-    <%= render 'fields', f: f %>
+    <%= render 'shared/error_messages', object: f.object %>
     <%= f.submit "Crear Cuenta", class: "mybtn btn btn-default" %>
   <% end %>
 
