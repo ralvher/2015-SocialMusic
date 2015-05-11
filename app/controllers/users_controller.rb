@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
+                                        :following, :followers]
+
   
   def index
     @users = User.paginate(page: params[:page], :per_page => 15)
@@ -39,7 +42,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
-    def update
+  def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Perfil Actualizado"
@@ -47,7 +50,21 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
-    end
+  end
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
 
 private
 
