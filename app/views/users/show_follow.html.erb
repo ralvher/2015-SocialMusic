@@ -4,8 +4,8 @@
     <section class="user_info">
       <%= gravatar_for @user %>
       <h1><%= @user.name %></h1>
-      <span><%= link_to "Mi perfil", @user %></span>
-      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+      <!--<span><%= link_to "Mi perfil", @user %></span>
+      <span><b>Microposts:</b> <%= @user.microposts.count %></span>-->
     </section>
     <section class="stats">
       <%= render 'shared/stat' %>
@@ -18,6 +18,8 @@
       <% end %>
     </section>
   </aside>
+
+  <!-- usuarios a los que sigues-->
   <div class="col-md-8">
     <h3><%= @title %></h3>
     <% if @users.any? %>

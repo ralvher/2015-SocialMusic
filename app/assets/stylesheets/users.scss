@@ -21,3 +21,24 @@
 .pag_bottom{
 	margin-bottom: 5%;
 }
+
+.perfil{
+	border-bottom: 1px solid grey;
+	text-align: right;
+	background-color: floralwhite;
+	top: -10px;
+	padding: 1%;
+	h1{
+		text-align:right;
+	}
+	.gravatar{
+		float: none;
+	}
+	.seguir{
+		float: right;
+	}
+}
+
+.perfil-user{
+	text-align: right;
+}
