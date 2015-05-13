@@ -55,6 +55,7 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["first_name"]  
       user.email = auth["info"]["email"]  
       user.password = auth["uid"] 
+      user.activated = true
     end      
   end  
 

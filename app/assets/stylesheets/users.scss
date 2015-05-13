@@ -21,3 +21,54 @@
 .pag_bottom{
 	margin-bottom: 5%;
 }
+
+.perfil{
+	border-bottom: 1px solid lightgreen;
+	text-align: center;
+	background: image-url("music.jpeg");
+	background-repeat: no-repeat;
+	background-size: 150%;
+	top: -10px;
+	padding: 1%;
+	h1{
+		text-align:center;
+	}
+	.gravatar{
+		float: none;
+	}
+	.seguir{
+		float: center;
+	}
+
+	.stats .seg1 a{
+		float: right;
+		text-align: right;
+		
+	}
+
+	.stats .seg2 a{
+		float: left;
+		text-align: left;
+		
+	}
+
+	.stats a{
+		color:black;
+	}
+}
+
+.perfil-user{
+	text-align: center;
+}
+
+.lista{
+	margin-bottom: 5%;
+}
+
+.micro{
+	margin-bottom: 5%;
+}
+
+.time{
+	margin-bottom: 5%;
+}
