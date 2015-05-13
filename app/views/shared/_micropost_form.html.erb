@@ -4,10 +4,18 @@
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
   </div>
   <%= f.submit "Enviar", class: "btn btn-primary" %>
-  <p> </p>
+
+<label class="filebutton">
+  <img src="https://members.cdbaby.com/images/sign-up-upload-music.png" width="80" height="60" style:"float:right"=""> 
   <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    <div class="hide">
+    <input accept="image/jpeg,image/gif,image/png" type="file" name="micropost[picture]" id="micropost_picture">
+    </div>
   </span>
+</label>
+
+
+
 <% end %>
 
 <script type="text/javascript">
@@ -18,3 +26,6 @@
     }
   });
 </script>
+
+
+
