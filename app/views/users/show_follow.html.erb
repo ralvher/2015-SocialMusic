@@ -1,26 +1,22 @@
 <% provide(:title, @title) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%= gravatar_for @user %>
-      <h1><%= @user.name %></h1>
-      <!--<span><%= link_to "Mi perfil", @user %></span>
-      <span><b>Microposts:</b> <%= @user.microposts.count %></span>-->
-    </section>
-    <section class="stats">
+  <div class="perfil col-xs-12 col-lg-12 col-sm-12 col-md-12">
+    <div class ="perfil-user col-xs-12 col-lg-12 col-sm-12 col-md-12">
+        <%= gravatar_for @user %>
+      <h1>        
+        <%= @user.name %>
+      </h1>      
+    </div>
+    <div class ="seguir col-xs-12 col-lg-12 col-sm-12 col-md-12">
+      <%= render 'follow_form' if logged_in? %>
+    </div>
+    <div class="stats col-xs-12 col-lg-12 col-sm-12 col-md-12">
       <%= render 'shared/stat' %>
-      <% if @users.any? %>
-        <div class="user_avatars">
-          <% @users.each do |user| %>
-            <%= link_to gravatar_for(user, size: 30), user %>
-          <% end %>
-        </div>
-      <% end %>
-    </section>
-  </aside>
+    </div>
+  </div>
 
   <!-- usuarios a los que sigues-->
-  <div class="col-md-8">
+  <div class="lista col-xs-12 col-lg-8 col-sm-12 col-md-8 col-lg-offset-2 col-md-offset-2 col-xs-offset-0 col-sm-offset-0">
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users follow">
