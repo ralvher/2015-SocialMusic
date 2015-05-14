@@ -15,9 +15,10 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  font-family: Verdana;
+  font-family: 'Armata', sans-serif;
   height: 100%;
-  padding-top: 60px;  
+  padding-top: 60px; 
+  background: #FFFEFA ; 
 }
 
 .welcome{
@@ -170,24 +171,45 @@ p {
 
 /* microposts */
 
+.micropost_form{
+  textarea{
+    width: 100%;
+  }
+
+  background: white;
+  padding: 1%;
+  margin-top: 20px;
+}
+
+.time{
+
+}
+
 .microposts {
   list-style: none;
-  padding: 0;
+  padding: 3px;
+ 
+
   li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+      background: white;
+      border-radius: 5px;
+      border: solid 1px lightgray;
+      margin-top: 5px;
+      padding: 10px;
   }
-  .user {
-    margin-top: 5em;
+  .user a{
+    margin-top: 10px;
     padding-top: 0;
   }
   .content {
-    display: block;
+    display: table-cell;
     margin-left: 60px;
     img {
       display: block;
       padding: 5px 0;
     }
+
+    padding:10px;
   }
   .timestamp {
     color: $gray-light;
@@ -196,8 +218,16 @@ p {
   }
   .gravatar {
     float: left;
-    margin-right: 10px;
-    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+
+  .like{
+    float: none;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 }
 
@@ -260,4 +290,41 @@ span.picture {
 
 .users.follow {
   padding: 0;
+}
+
+.user_info{
+  .gravatar{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+  h1{
+    text-align: justify;
+  }
+}
+
+.myp{
+  
+  background: white;
+  padding: 1%;
+  border-radius: 5px;
+  border: solid 1px lightgray;
+  margin-top: 5px;
+  margin-left: 1%;
+
+  .stats .seg1 a{
+    float: right;
+    text-align: right;
+    
+  }
+
+  .stats .seg2 a{
+    float: left;
+    text-align: left;
+    
+  }
+
+  
 }

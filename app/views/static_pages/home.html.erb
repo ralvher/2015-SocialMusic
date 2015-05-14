@@ -1,18 +1,20 @@
 <% if logged_in? %>
 	<div class="row">
-		<aside class="col-md-4 col-xs-12 col-lg-4 col-sm-12">
+		<aside class="myp col-md-3 col-xs-12 col-lg-3 col-sm-12">
 			<section class="user_info">
 				<%= render 'shared/user_info' %>
 			</section>
-		      <section class="stats">
+		     <section class="stats">
 		        <%= render 'shared/stat' %>
-		      </section>
-			<section class="micropost_form">
+		     </section>	
+
+		     <section class="micropost_form">
 				<%= render 'shared/micropost_form' %>
-			</section>
+			</section>		
 		</aside>
-		<div class="time col-md-8 col-xs-12 col-lg-8 col-sm-12">
-			<h3>Timeline</h3>
+
+		
+		<div class="time col-md-8 col-xs-offset-0 col-sm-offset-0 col-xs-12 col-lg-8 col-sm-12">
 			<%= render 'shared/feed' %>
 		</div>
 	</div>
