@@ -44,3 +44,12 @@
 .myc{
 	color: white;
 }
+
+.facebook{
+	a{
+		color: black;
+		&:hover{
+			color: blue;
+		}
+	}
+}
