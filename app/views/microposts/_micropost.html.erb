@@ -15,14 +15,7 @@
   <span class="content">
     <%= micropost.content %>        
 
-    <%if (micropost.content.include? 'https://www.youtube.com/watch?v=') %>
-        <% a = micropost.content.split %>
-        <% i = a.size %>
-        <% for j in 0..i %>
-          <% a = a[j] if a[j].include? "https://www.youtube."%>
-        <%end%>
-        <%= video_tag(a, id: "player1", type: "video/youtube", size: "320x180") %>
-    <%end %> 
+    <%= render 'shared/link', :@micropost=> micropost.content%>
 
     <%= image_tag micropost.picture.url if micropost.picture? %>
   </span>

@@ -19,6 +19,12 @@ body {
   height: 100%;
   padding-top: 60px; 
   background: #FFFEFA ; 
+  a{
+    color: olivedrab;
+  }
+  a:hover{
+    color: green;
+  }
 }
 
 .welcome{
@@ -176,7 +182,7 @@ p {
     width: 100%;
   }
 
-  background: white;
+  background: lightyellow;
   padding: 1%;
   margin-top: 20px;
 }
@@ -191,7 +197,7 @@ p {
  
 
   li {
-      background: white;
+      background: lightyellow;
       border-radius: 5px;
       border: solid 1px lightgray;
       margin-top: 5px;
@@ -269,7 +275,7 @@ span.picture {
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: green;
     }
   }
   strong {
@@ -307,7 +313,7 @@ span.picture {
 
 .myp{
   
-  background: white;
+  background: lightyellow;
   padding: 1%;
   border-radius: 5px;
   border: solid 1px lightgray;
@@ -327,4 +333,49 @@ span.picture {
   }
 
   
+}
+
+.datos{  
+  background: lightyellow;
+  padding: 1%;
+  border-radius: 5px;
+  border: solid 1px lightgray;
+
+  input{
+    margin-bottom: 15px;
+  }
+  margin-bottom: 5%;
+
+  .btn{
+    width: 100%;
+  }
+}
+
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    background-color: darkseagreen;
+    border-color: green;
+    color: #fff;
+    cursor: default;
+    z-index: 2;
+}
+
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: green;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.listauser{
+  background: lightyellow;
+  padding: 1%;
+  border-radius: 5px;
+  border: solid 1px lightgray;
+  margin-bottom: 5%;
 }

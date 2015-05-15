@@ -1,11 +1,13 @@
 <% provide(:title, 'Usuarios') %>
 <h1>Usuarios de SocialMusic</h1>
-<%= will_paginate %>
-<ul class="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-  <% end %>
-</ul>
+<div class="listauser col-xs-12 col-sm-12 col-lg-8 col-md-8 col-md-offset-2 col-lg-offset-2">
+	<%= will_paginate %>
+	<ul class="users">
+	  <% @users.each do |user| %>
+	    <%= render user %>
+	  <% end %>
+	</ul>
 
-<%= will_paginate @users, :class => 'pag_bottom' %>
+	<%= will_paginate @users, :class => 'pag_bottom' %>
 
+</div>

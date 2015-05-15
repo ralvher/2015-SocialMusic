@@ -1,0 +1,21 @@
+<%= puts "parametros --> #{@micropost}" %>
+<%if (@micropost.include? 'https://www.youtube.com/watch?v=') %>
+        <% a = @micropost.split %>
+        <% i = a.size %>
+        <% for j in 0..i %>
+          <% a = a[j] if a[j].include? "https://www.youtube."%>
+        <%end%>
+        <%= video_tag(a, id: "player1", type: "video/youtube", size: "320x180") %>
+<%end %> 
+
+<% if (@micropost.include? 'https://embed.spotify.com/?uri=') %>
+	<% a = @micropost.split %>
+    <% i = a.size %>
+    <% for j in 0..i %>
+      <% a = a[j] if a[j].include? "https://embed.spotify.com/?uri="%>
+    <%end%>
+
+    <div>
+    	<iframe src="<%= a %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+ <%end%>

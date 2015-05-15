@@ -1,3 +1,8 @@
+
+body{
+	background: image-url("background.jpeg");
+	background-size: cover;
+}
 .mybtn{
 	margin-bottom: 10%;
 	margin-top: 5%;
@@ -18,16 +23,9 @@
 	margin-bottom:0;
 }
 
-.pag_bottom{
-	margin-bottom: 5%;
-}
-
 .perfil{
-	border-bottom: 1px solid lightgreen;
-	text-align: center;
-	background: image-url("music.jpeg");
-	background-repeat: no-repeat;
-	background-size: 150%;
+	
+	text-align: center;	
 	top: -10px;
 	padding: 1%;
 	h1{
@@ -38,6 +36,7 @@
 	}
 	.seguir{
 		float: center;
+		margin-bottom: 15px;
 	}
 
 	.stats .seg1 a{
@@ -55,6 +54,11 @@
 	.stats a{
 		color:black;
 	}
+
+	.stats a:hover{
+		color:green;
+	}
+
 }
 
 .perfil-user{
