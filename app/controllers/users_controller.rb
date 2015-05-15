@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Por favor revise su email para activar su cuenta! "
+      flash[:info] = "¡Por favor revise su email para activar su cuenta! "
       redirect_to root_url
     else
       render 'new'
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "Usuario eliminado"
+    flash[:success] = "¡Usuario eliminado!"
     redirect_to users_url
   end
 
@@ -53,14 +53,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = "Escuchando"
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page], :per_page => 15)
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = "Oyentes"
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page], :per_page => 15)
     render 'show_follow'
@@ -78,7 +78,7 @@ private
     def logged_in_user
       unless logged_in?
         store_location      
-        flash[:danger] = "Por favor, registrese! "
+        flash[:danger] = "¡Por favor, registrese! "
         redirect_to root_url
       end
     end

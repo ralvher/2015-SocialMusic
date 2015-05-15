@@ -15,14 +15,19 @@
     </div>
   </div>
 
-  <!-- usuarios a los que sigues-->
+  <!-- usuarios a los que sigues o te siguen -->
   <div class="lista col-xs-12 col-lg-8 col-sm-12 col-md-8 col-lg-offset-2 col-md-offset-2 col-xs-offset-0 col-sm-offset-0">
-    <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users follow">
         <%= render @users %>
       </ul>
       <%= will_paginate %>
+    <% else %>
+      <% if @title == "Oyentes" %>
+        <h3> No hay oyentes </h3>
+      <% else %>
+        <h3> No hay a quién eschuchar </h3>
+      <% end %>
     <% end %>
   </div>
 </div>
