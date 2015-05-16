@@ -19,6 +19,7 @@ gem 'bcrypt',               '3.1.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'google-webfonts-rails'
+gem 'font-awesome-rails'
 
 gem 'flog'
 gem 'flay'
