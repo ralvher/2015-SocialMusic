@@ -1,10 +1,7 @@
 
-<% puts "parametros: micropost #{@post.id}, user #{@user.id}" %>
-
- <div id="like_form">
   <% if @post.likings?(@user) %>
     <%= render 'microposts/unlike', :@post => @post %>
   <% else %>
     <%= render 'microposts/like', :@post => @post %>
   <% end %>
- </div>
+

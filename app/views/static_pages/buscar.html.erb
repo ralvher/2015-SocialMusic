@@ -1,0 +1,19 @@
+<% provide(:title, 'Búsqueda') %>
+<div class="row">
+	<div class="listauser col-xs-12 col-md-8 col-md-offset-2 col-lg-offset-2 col-lg-8 col-sm-12"> 
+		<%if @user.size > 0 %>
+		
+			<%= will_paginate @user %>
+			<ul class="users">
+			  <% @user.each do |user| %>
+			    <%= render user %>
+			  <% end %>
+			</ul>
+
+			<%= will_paginate @user %>
+		
+		<%else%>
+			<p> No se han encontrado coincidencias </p>
+		<%end%>
+	</div>
+</div>

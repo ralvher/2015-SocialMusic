@@ -1,0 +1,23 @@
+<h2>Donde descubrir nuevos éxitos...</h2>
+<div>
+	<%= link_to "<i class='fa fa-youtube-play fa-1x'></i> Ir a  Youtube".html_safe, "https://www.youtube.es", :target => "_blank"  %> 
+</div>
+<div>
+	<%= link_to "<i class='fa fa-spotify fa-1x'></i> Ir a  Spotify ".html_safe, "https://play.spotify.com", :target => "_blank" %> 
+</div>
+<div>
+	<%= link_to "<i class='fa fa-vine fa-1x'></i> Ir a  Vine ".html_safe, "https://vine.co/", :target => "_blank" %> 
+</div>
+<div>
+	<%= link_to "<i class='fa fa-soundcloud fa-1x'></i> Ir a  SoundCloud ".html_safe, "https://soundcloud.com/", :target => "_blank"  %> 
+</div>
+
+<div class="notfollow">
+	<% @notfollow.each do |notf| %> 
+
+	<p>
+		<%= link_to gravatar_for(notf, size: 45), notf, title: notf.name %> <%= link_to notf.name , notf, title: notf.name %> 
+	</p>
+	<%end%>
+
+</div>

@@ -6,7 +6,7 @@ class RelationlikesController < ApplicationController
 		@post = Micropost.find(params[:post_id])
    		@post.like(@user)
     	respond_to do |format|
-     		format.html { redirect_to @feed_items} #a donde hay que rediriguir para que vaya bien????
+     		format.html {redirect_to request.referrer} #a donde hay que rediriguir para que vaya bien????
       		format.js
     	end
 	end
@@ -16,7 +16,7 @@ class RelationlikesController < ApplicationController
 	    @post = Relationlike.find(params[:id]).post
 	    @post.unlike(@user)
 	    respond_to do |format|
-    		format.html { redirect_to @feed_items} #a donde hay que rediriguir para que vaya bien????
+    		format.html { redirect_to request.referrer } #a donde hay que rediriguir para que vaya bien????
       		format.js
    		 end
   	end
