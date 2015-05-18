@@ -1,7 +1,20 @@
-<%= puts "parametros --> #{@micropost}" %>
+<%= puts "parametros --> #{@micropost}" %>        
+<% b = @micropost.split %>
+<% i = b.size %>
+<p>
+    <% for j in 0..i-1 %>
+        <%if ((b[j].include? 'https://www.youtube.com/watch?v=') || (b[j].include? 'https://embed.spotify.com/?uri=')) %>
+            <strong><i> <%= link_to "Escuchar música", b[j], :alt => "Musica", :title=>b[j] %> </i></strong>
+        <%else%>
+            <%= b[j] %>
+        <%end%>
+    <%end%>
+</p>
+
 <%if (@micropost.include? 'https://www.youtube.com/watch?v=') %>
+        
         <% a = @micropost.split %>
-        <% i = a.size %>
+        <% i = a.size %>      
         <% for j in 0..i %>
           <% a = a[j] if a[j].include? "https://www.youtube."%>
         <%end%>
