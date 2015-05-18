@@ -11,7 +11,8 @@ class MicropostsController < ApplicationController
       redirect_to root_url
     else
       @feed_items = []
-      render 'static_pages/home'
+      flash[:danger] = "¡No se ha podido crear el post!"
+      redirect_to root_url
     end
   end
 

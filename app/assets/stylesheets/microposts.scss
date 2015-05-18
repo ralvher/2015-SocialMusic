@@ -1,3 +1,22 @@
 // Place all the styles related to the Microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.filebutton{
+	float:right;
+	&:hover{
+		color: grey;
+		cursor: pointer;
+	}
+	margin-right: 15px;
+}
+
+.mybt{
+	width: 100%;
+	margin-top: 3%;
+}
+
+.linkp{
+	text-align: right;
+}

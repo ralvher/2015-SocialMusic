@@ -24,7 +24,7 @@ gem 'font-awesome-rails'
 gem 'flog'
 gem 'flay'
 gem 'roodi'
-
+gem 'reek'
 
 group :development, :test do
 	gem 'sqlite3', '1.3.9'

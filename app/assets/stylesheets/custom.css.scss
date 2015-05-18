@@ -183,14 +183,12 @@ p {
     width: 100%;
   }
 
-  background: lightyellow;
+  background: white;
   padding: 1%;
   margin-top: 20px;
 }
 
-.time{
 
-}
 
 .microposts {
   list-style: none;
@@ -198,7 +196,7 @@ p {
  
 
   li {
-      background: lightyellow;
+      background: white;
       border-radius: 5px;
       border: solid 1px lightgray;
       margin-top: 5px;
@@ -231,10 +229,8 @@ p {
   }
 
   .like{
-    float: none;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    text-align: right;
+    
   }
 }
 
@@ -308,18 +304,17 @@ span.picture {
   }
 
   h1{
-    text-align: justify;
+    text-align: left;
   }
 }
 
 .myp{
   
-  background: lightyellow;
+  background: white;
   padding: 1%;
   border-radius: 5px;
   border: solid 1px lightgray;
-  margin-top: 5px;
-  margin-left: 1%;
+  margin-top: 8px;
 
   .stats .seg1 a{
     float: right;
@@ -335,9 +330,64 @@ span.picture {
 
   
 }
+.myrow{
+  margin-bottom:5%;
+}
+
+.notfollow{
+  margin-top: 10px;
+  p{
+    float:left;
+  }
+  a{
+    font-size: 10px;
+  }
+}
+
+
+.busqueda{
+  background: white;  
+  border-radius: 5px;
+  border: solid 1px lightgray;
+  margin-top: 8px;
+  padding: 1%;
+  margin-bottom: 10%;
+  
+}
+
+.exitos{
+  
+  background: white;  
+  border-radius: 5px;
+  border: solid 1px lightgray;
+  margin-top: 8px;
+  padding: 1%;
+  color: grey;
+  h2{
+    text-align: left;
+  }
+  a{
+    color: grey;
+    font-style: italic;
+    font-size: 25px;
+    &:hover{
+      color: black;
+    }
+  }
+  .notfollow{
+    margin-top: 10px;
+  p{
+    float:left;
+  }
+  a{
+    font-size: 20px;
+  }
+}
+
+}
 
 .datos{  
-  background: lightyellow;
+  background: white;
   padding: 1%;
   border-radius: 5px;
   border: solid 1px lightgray;
@@ -374,7 +424,7 @@ span.picture {
 }
 
 .listauser{
-  background: lightyellow;
+  background: white;
   padding: 1%;
   border-radius: 5px;
   border: solid 1px lightgray;

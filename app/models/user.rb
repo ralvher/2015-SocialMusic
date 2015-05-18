@@ -98,6 +98,11 @@ class User < ActiveRecord::Base
                      OR user_id = :user_id", user_id: id)
   end
 
+  def not_follow
+
+      following_ids = User.where("id NOT IN (SELECT followed_id FROM relationships WHERE follower_id = #{self.id}) ")
+      User.find(following_ids.sample(3))
+  end 
 
     # Follows a user.
   def follow(other_user)
