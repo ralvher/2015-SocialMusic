@@ -3,8 +3,8 @@
 <% i = b.size %>
 <p>
     <% for j in 0..i-1 %>
-        <%if ((b[j].include? 'https://www.youtube.com/watch?v=') || (b[j].include? 'https://embed.spotify.com/?uri=')) %>
-            <strong><i> <%= link_to "Escuchar música", b[j], :alt => "Musica", :title=>b[j] %> </i></strong>
+        <%if ((b[j].include? 'https://') || (b[j].include? 'http://')) %>
+            <strong><i> <%= link_to "Visitar Link", b[j], :alt => "Visitar link", :title=>b[j] %> </i></strong>
         <%else%>
             <%= b[j] %>
         <%end%>
