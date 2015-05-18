@@ -3,4 +3,9 @@
     <%= render @feed_items %>
   </ol>
   <%= will_paginate @feed_items %>
+<% else %>
+<div class="news">
+	<p><strong> <i> No hay novedades... </i> </strong></p>
+	<p> ¡ Empieza a Eschuchar  <%= fa_icon("music")%>!</p>
+</div>
 <% end %>

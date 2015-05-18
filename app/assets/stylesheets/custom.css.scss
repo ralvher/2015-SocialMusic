@@ -39,6 +39,12 @@ body {
   .reg{
     margin-bottom: 5%;
   }
+  .myfac{
+    color: black;
+    &:hover{
+      color:blue;
+    }
+  }
 
 }
 
@@ -98,12 +104,17 @@ p {
   text-transform: uppercase;  
   font-weight: bold;
   font-size: 200%;
+  margin-top: 2%;
   &:hover {
     color: white;
     text-decoration: none;
   }
 }
 
+#buscar{
+  margin-top: 5px;
+  width: 25%;
+}
 /* footer */
 
 .footer {
@@ -355,6 +366,16 @@ span.picture {
   
 }
 
+.news{
+  background: white;  
+  border-radius: 5px;
+  border: solid 1px lightgray;
+  margin-top: 8px;
+  padding: 1%;
+  color: grey;
+  font-size: 25px;
+}
+
 .exitos{
   
   background: white;  
@@ -428,5 +449,5 @@ span.picture {
   padding: 1%;
   border-radius: 5px;
   border: solid 1px lightgray;
-  margin-bottom: 5%;
+  margin-bottom: 15%;
 }

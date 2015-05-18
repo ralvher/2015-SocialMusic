@@ -14,11 +14,11 @@
       <% if logged_in? %>
       
         <ul class="nav navbar-nav navbar-right" >
-
-          <li><%= link_to "Usuarios <i class='fa fa-users my-fa'> </i>".html_safe , users_path %></li> 
+          <li><%= link_to "Inicio <i class='fa fa-home fa-2x my-fa'> </i>".html_safe , root_path %></li> 
+          <li><%= link_to "Usuarios <i class='fa fa-user fa-2x my-fa'> </i>".html_safe , users_path %></li> 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= current_user.name %> <b class="caret"></b>
+              <%= current_user.name %> <%= fa_icon("music  2x") %> <b class="caret"></b>
             </a>            
             <ul class="dropdown-menu">
               <li><%= link_to "<i class='fa fa-user my-fa'> </i> Perfil ".html_safe, current_user %></li>
@@ -31,8 +31,8 @@
             
           </li>
         </ul>
-        <form class="navbar-form navbar-right" action="/buscar" >
-              <input role="search" type="text" id="buscar" name="buscar" class="form-control" placeholder="Buscar Usuario...">
+        <form class="navbar-form" action="/buscar" >
+              <input role="search" type="text" id="buscar" name="buscar" class="form-control" placeholder="Busca oyentes, escuchas ...">
         </form>
 
       <% else %>
@@ -56,7 +56,6 @@
             <%= f.submit "Entrar", class: "entrar btn btn-default" %>
           </div>
         <% end %>
-
       <% end %>
     </div>
   </div>
