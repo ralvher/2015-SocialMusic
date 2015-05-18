@@ -12,11 +12,19 @@
     <% end %>
   </span>
 
-  <span class="content">         
-
-    <%= render 'shared/link', :@micropost=> micropost.content %>
+  <span class="content"> 
+    <% b = micropost.content.split %>
+    <% i = b.size %>
+    <p>
+        <% for j in 0..i-1 %>
+            <%if ((b[j].include? 'https://www.youtube.com/watch?v=') || (b[j].include? 'https://embed.spotify.com/?uri=')) %>
+               <strong><i> <%= link_to "Escuchar música", b[j], :alt => "Musica", :title=>b[j] %> </i></strong>
+            <%else%>
+                <%= b[j] %>
+            <%end%>
+        <%end%>
+    </p>
     <%= image_tag micropost.picture.url if micropost.picture? %>
-    
   </span>
    
   <%= render 'microposts/like_form', :@post=> micropost, :@user=>current_user %>
