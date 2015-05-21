@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#test micropost
 class MicropostTest < ActiveSupport::TestCase
 
   def setup

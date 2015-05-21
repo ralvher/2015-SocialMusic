@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#test registro usuarios
 class UsersSignupTest < ActionDispatch::IntegrationTest
 
   def setup

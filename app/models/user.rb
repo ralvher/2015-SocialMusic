@@ -1,3 +1,4 @@
+#usuario
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
@@ -55,7 +56,7 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
-
+  # ominiauzth
   def self.create_with_omniauth(auth)  
     create! do |user|  
       user.name = auth["info"]["first_name"]  
@@ -64,12 +65,12 @@ class User < ActiveRecord::Base
       user.activated = true
     end      
   end  
-
+  #activado
   def activate
     update_attribute(:activated,    true)
     update_attribute(:activated_at, Time.zone.now)
   end
-
+  #email de activacion
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
@@ -84,7 +85,7 @@ class User < ActiveRecord::Base
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
   end
-
+  #caducidad de contraseña
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
@@ -97,7 +98,7 @@ class User < ActiveRecord::Base
     Micropost.where("user_id IN (#{following_ids})
                      OR user_id = :user_id", user_id: id)
   end
-
+  #no siguiendo
   def not_follow
 
       following_ids = User.where("id NOT IN (SELECT followed_id FROM relationships WHERE follower_id = #{self.id}) ")
@@ -121,11 +122,11 @@ class User < ActiveRecord::Base
   
   
   private
-
+  #mail
     def downcase_email
       self.email = email.downcase
     end
-
+  #activacion
     def create_activation_digest
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)

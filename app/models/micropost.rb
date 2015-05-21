@@ -1,3 +1,4 @@
+#micropost model
 class Micropost < ActiveRecord::Base
    belongs_to :user
    default_scope -> { order(created_at: :desc) }
@@ -10,14 +11,15 @@ class Micropost < ActiveRecord::Base
                                     dependent: :destroy
    has_many :likings, through: :active_relationlikes, source: :liker
 
+  #like
   def like(o_user)
     active_relationlikes.create(liker_id: o_user.id)
   end
-
+    #no like
   def unlike(o_user)
     active_relationlikes.find_by(liker_id: o_user.id).destroy
   end
-
+    #like to user
   def likings?(o_user)
     likings.include?(o_user)
   end

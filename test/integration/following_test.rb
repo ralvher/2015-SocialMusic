@@ -1,7 +1,7 @@
 require 'test_helper'
-
+#test seguimiento
 class FollowingTest < ActionDispatch::IntegrationTest
-
+ #setup
   def setup
     @user  = users(:michael)
     @other = users(:archer)

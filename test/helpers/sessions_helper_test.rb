@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#test sesion helper
 class SessionsHelperTest < ActionView::TestCase
 
   def setup

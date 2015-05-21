@@ -1,2 +1,3 @@
+#ayuda
 module RelationlikesHelper
 end

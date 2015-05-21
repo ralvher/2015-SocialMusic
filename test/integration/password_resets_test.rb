@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#test password
 class PasswordResetsTest < ActionDispatch::IntegrationTest
   def setup
     ActionMailer::Base.deliveries.clear
