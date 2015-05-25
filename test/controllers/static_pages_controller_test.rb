@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#test paginas estaticas
 class StaticPagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home

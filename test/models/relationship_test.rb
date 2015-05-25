@@ -1,5 +1,6 @@
 require 'test_helper'
 
+#test relaciones
 class RelationshipTest < ActiveSupport::TestCase
 
   def setup

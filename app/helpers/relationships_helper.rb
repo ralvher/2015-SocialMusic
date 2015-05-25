@@ -1,2 +1,3 @@
+#ayuda
 module RelationshipsHelper
 end

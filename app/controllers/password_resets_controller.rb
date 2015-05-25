@@ -1,3 +1,4 @@
+#resetar password
 class PasswordResetsController < ApplicationController
   before_action :get_user,   only: [:edit, :update]
   before_action :valid_user, only: [:edit, :update]
@@ -5,7 +6,7 @@ class PasswordResetsController < ApplicationController
 
   def new
   end
-
+  #crear contraseña
   def create
     @user = User.find_by(email: params[:password_reset][:email].downcase)
     if @user
@@ -21,7 +22,7 @@ class PasswordResetsController < ApplicationController
 
   def edit
   end
-
+  #actualizar contraseña
   def update
     if password_blank?
       flash.now[:danger] = "La contraseña no puede estar vacía"
@@ -36,7 +37,7 @@ class PasswordResetsController < ApplicationController
   end
 
   private
-
+    #user_parms
     def user_params
       params.require(:user).permit(:password, :password_confirmation)
     end

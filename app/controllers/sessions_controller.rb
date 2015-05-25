@@ -1,8 +1,9 @@
+#control de sesion
 class SessionsController < ApplicationController
-
+#nueva 
   def new
   end
-
+#crear sesion
   def create
 
     auth = request.env["omniauth.auth"]
@@ -32,7 +33,7 @@ class SessionsController < ApplicationController
       end
     end
   end
-
+#destruir
   def destroy
     log_out if logged_in?
     redirect_to root_url

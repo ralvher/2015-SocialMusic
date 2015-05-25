@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#test autentificacion por email
 class UserMailerTest < ActionMailer::TestCase
 
   test "account_activation" do

@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#test edicion perfil
 class UsersEditTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)

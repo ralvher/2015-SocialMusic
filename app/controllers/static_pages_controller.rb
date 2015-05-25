@@ -1,4 +1,6 @@
+#paginas estaticas
 class StaticPagesController < ApplicationController
+  #pagina principal
   def home
     if logged_in?
       @micropost  = current_user.microposts.build
@@ -7,14 +9,16 @@ class StaticPagesController < ApplicationController
     end
   end
 
+   #metodo para buscar usaurios
    def buscar
     
     text = params[:buscar]
     puts "#{text}"
     @user = User.where("name like '%#{text}%'").paginate(page: params[:page], :per_page => 15)
-	puts "#{@user}"
-  end
-
+	  puts "#{@user}"
+   end
+  
+  #ayuda
   def help
   end
 end
