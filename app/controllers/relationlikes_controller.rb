@@ -9,6 +9,7 @@ class RelationlikesController < ApplicationController
    		@post.like(@user)
     	redirect_to request.referer
 	end
+	
 	#destruir likes
 	def destroy
 	    @user = Relationlike.find(params[:id]).liker

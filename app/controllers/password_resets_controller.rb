@@ -6,7 +6,8 @@ class PasswordResetsController < ApplicationController
 
   def new
   end
-  #crear contraseña
+
+  #crear envia de email de reseteo de email
   def create
     @user = User.find_by(email: params[:password_reset][:email].downcase)
     if @user
@@ -22,6 +23,7 @@ class PasswordResetsController < ApplicationController
 
   def edit
   end
+
   #actualizar contraseña
   def update
     if password_blank?
@@ -37,6 +39,7 @@ class PasswordResetsController < ApplicationController
   end
 
   private
+
     #user_parms
     def user_params
       params.require(:user).permit(:password, :password_confirmation)
@@ -48,7 +51,8 @@ class PasswordResetsController < ApplicationController
     end
 
     # Before filters
-
+    
+    #busca el usuario
     def get_user
       @user = User.find_by(email: params[:email])
     end

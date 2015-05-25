@@ -5,21 +5,23 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
                                         :following, :followers]
 
-  
+  #cada vez que se accede al index se buscan los  usuarios
   def index
     @users = User.paginate(page: params[:page], :per_page => 15)
   end
   
+  #cada vez que se accede a show se busca el usuario y sus microposts
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page], :per_page => 15)
   end
 
+  #crea un nuevo usuario
   def new
     @user = User.new
   end
 
-
+  #crea un usuario comprobando si este ya ha realizado previamente el registo
   def create
 
     @user = User.new(user_params)
@@ -33,16 +35,19 @@ class UsersController < ApplicationController
 
   end
   
+  #elimina usuario
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "¡Usuario eliminado!"
     redirect_to users_url
   end
 
+  #busca al usario en editar
   def edit
     @user = User.find(params[:id])
   end
-  
+
+  #actualiza un perfil
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
@@ -53,6 +58,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #mustra los usuarios escuchados
   def following
     @title = "Escuchando"
     @user  = User.find(params[:id])
@@ -60,6 +66,7 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  #muestra los usuarios oyentes
   def followers
     @title = "Oyentes"
     @user  = User.find(params[:id])
@@ -84,12 +91,13 @@ private
       end
     end
     
-        # Confirms the correct user.
+    # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
     
+    #comprueba si es el admin
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
